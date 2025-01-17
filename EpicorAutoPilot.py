@@ -57,7 +57,7 @@ def CleanTabAnalys(sourcefile,destfile):
                 linenum = linenum + 1 
                 line =''
                 if (linenum > 200):
-                    print "Doesn't seem to be a tabanalys"
+                    print("Doesn't seem to be a tabanalys")
                     break
             elif (line.find("-------") != -1 and linenum == -1): #end of table data
                     break       
@@ -280,7 +280,7 @@ def Choice_Test_Connection():
     usrpw = GetDSNPassword()
     PilotDB = EpicorDatabase(PilotApp.Settings['DSN'],usrpw[0], usrpw[1] )
     CurComp = PilotDB.Sql("SELECT name FROM pub.company")
-    print CurComp[0]
+    print (CurComp[0])
     easygui.msgbox("Connected to: " + str(CurComp[0]))
     PilotDB.Rollback()
     PilotDB.Close()
@@ -325,7 +325,7 @@ while True:
         
     elif choice == 'Display Default Settings':
         #TODO
-        print 'Not Implemented'
+        print ('Not Implemented')
 
     elif choice == 'Test DB Connection':
         Choice_Test_Connection()
@@ -337,6 +337,6 @@ while True:
         break
        #Quit
     else:
-        print "Not Implemented"
+        print ("Not Implemented")
         break
         #Quit
